@@ -1,15 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_clone/config/api_json.dart';
-// import 'package:google_clone/config/api_keys.env';
+import 'package:google_clone/config/api_keys.env';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  bool isDummyData = true;
+  bool isDummyData = false;
 
-  get apiKey => null;
-
-  get contextKey => null;
   Future<Map<String, dynamic>> fetchData({
     required BuildContext context,
     required String queryTerm,

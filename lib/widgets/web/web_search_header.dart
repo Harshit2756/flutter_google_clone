@@ -104,7 +104,7 @@ class WebSearchHeader extends StatelessWidget {
                 splashRadius: 20,
                 tooltip: 'Google apps',
                 style: ButtonStyle(
-                  overlayColor: MaterialStateProperty.all(Colors.transparent),
+                  overlayColor: WidgetStateProperty.all(Colors.transparent),
                 ),
                 // splashColor: const Color(0xff424548),
                 icon: const Icon(Icons.apps_rounded, color: Colors.white),
