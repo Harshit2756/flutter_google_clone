@@ -43,7 +43,7 @@ class SearchScreen extends StatelessWidget {
                   child: const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: SearchTabs(),
-                  ),
+                  ), 
                 ),
                 const Divider(
                   height: 0,

@@ -45,3 +45,6 @@ app.*.map.json
 
 # hide key from git
 /lib/config/api_keys.env
+
+# FVM Version Cache
+.fvm/

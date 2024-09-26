@@ -31,7 +31,7 @@ class MobileSearchHeader extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  height: 45,
+                  height: 40,
                   minWidth: 100,
                   color: const Color.fromARGB(255, 82, 133, 200),
                   child: const Text(
