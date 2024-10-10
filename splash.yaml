@@ -1,0 +1,11 @@
+flutter_native_splash:
+  ios: True
+  web: True
+
+  color: "#FFFFFF"
+  image: assets/images/Google_G_logo.png
+
+  android_12:
+    color: "#FFFFFF"
+    image: assets/images/Google_G_logo.png
+

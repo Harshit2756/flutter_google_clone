@@ -6,6 +6,7 @@
 <a href="https://www.linkedin.com/in/harshit-khandelwal-3a76631b9/">
 <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white&label=Harshit%20Khandelwal">
 </a>
+
 </div>
 
 <h1 align="center">Google Search Clone (Flutter)</h1>
@@ -20,51 +21,68 @@
   <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/Harshit2756/flutter_google_clone?color=56BEB8" /> -->
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/Harshit2756/flutter_google_clone?color=56BEB8" /> -->
 </p>
-<!-- ## Status
-<h4 align="center">
- 🚧  StyleHub App  🚧
-</h4> -->
 <hr>
+## 📜 Table of Contents
 
-<p align="center">
-  <a href="#dart-about">About</a> &nbsp; | &nbsp;
-  <a href="#mobile_phone-see-it-in-action">See it in Action</a> &nbsp; | &nbsp;
-  <a href="#sparkles-features">Features</a> &nbsp; | &nbsp;
-  <a href="#white_check_mark-installation">Installation</a> &nbsp; | &nbsp;
-  <a href="#rocket-resources">Resources</a> &nbsp; | &nbsp;
-  <a href="https://github.com/Harshit2756" target="_blank">Author</a>
-</p>
+- [📖 About](#book-about)
+- [👀 See it in Action](#eyes-see-it-in-action)
+- [✨ Features](#sparkles-features)
+- [✅ Installation](#white_check_mark-installation)
+- [🚀 Resources](#rocket-resources)
+- [👨‍💻 Author](https://github.com/Harshit2756)
 
-## :dart: About
+## :book: About
 
 This project is a responsive clone of the Google Search interface. It allows users to perform searches using the Google Search API and displays results with pagination. The app is fully responsive and adjusts seamlessly across devices, from mobile phones to desktops.
 
-## :mobile_phone: See it in action
+## :eyes: See it in Action
 
-| <a href=" " target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Live_Preview_Trans.png?raw=true" width="90px"></a> | <a href=" " target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Demo_Video_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/releases/download/v1.0.0/app-release.apk" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Download_Apk_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/archive/refs/tags/v1.0.0.zip" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Source_Code_Trans.png?raw=true" width="90px"></a> |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     Live Preview                                                                     |                                                                     Demo Video                                                                     |                                                                                                                     Download APK                                                                                                                      |                                                                                                                  Source Code                                                                                                                   |
+| <a href="https://harshit2756.github.io/flutter_google_clone/" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Live_Preview_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/releases/download/v1.0.0/app-release.apk" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Download_Apk_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/archive/refs/tags/v1.0.0.zip" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Source_Code_Trans.png?raw=true" width="90px"></a> |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                              Live Preview                                                                                              |                                                                                                                  Download APK                                                                                                                   |                                                                                                            Source Code                                                                                                             |
 
-<!-- ### Screenshots
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop1-01.png)
+<!-- <hr>
+### 📺 Demo Video
+<video width="100%" height="auto" controls>
+  <source src="https://www.youtube.com/watch?v=Yw6u6YkTgQ4" type="video/mp4">
+</video> -->
 
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop2-01.png)
+<hr>
 
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop3-01.png)  -->
+### 📷 Screenshots
+
+<table width="100%">
+  <tbody>
+    <tr>
+      <td width="1%"><img src="![alt text](image.png)?raw=true"/></td>
+      <td width="1%"><img src="Screenshots/image_2.png?raw=true"/></td>
+       <td width="1%"><img src="Screenshots/image_3.png?raw=true"/></td>
+    </tr>
+    <!-- <tr>
+      <td width="1%"><img src=""/></td>
+      <td width="1%"><img src=""/></td>
+       <td width="1%"><img src=""/></td>
+    </tr>
+    <tr>
+      <td width="1%"><img src=""/></td>
+      <td width="1%"><img src=""/></td>
+       <td width="1%"><img src=""/></td>
+    </tr> -->
+  </tbody>
+</table>
 
 ## :sparkles: Features
 
-✔️ **Responsive UI** - Adapts layout based on screen size (phone, tablet, desktop).\
-✔️ **Google Search API Integration** - Uses Google's official API to fetch search results. \
-✔️ **Pagination** - Efficient navigation through search results with pagination. \
-✔️ **Smooth UI** - User-friendly and clean interface replicating the Google Search experience. 
-
+📱💻 **Responsive UI** - Adapts layout based on screen size (phone, tablet, desktop).\
+🔍🌐 **Google Search API Integration** - Uses Google's official API to fetch search results. \
+📄➡️ **Pagination** - Efficient navigation through search results with pagination. \
+✨🖥️ **Smooth UI** - User-friendly and clean interface replicating the Google Search experience.
 
 ## :white_check_mark: Installation
 
 To run this project, you need to have Flutter installed on your machine. If you don't have Flutter installed, you can follow the official Flutter installation guide [here](https://flutter.dev/docs/get-started/install).
 
-- Flutter Version - 3.22.0
+- Flutter Version - 3.24.0
 
 Once you have Flutter installed, follow these steps to run the project:
 
