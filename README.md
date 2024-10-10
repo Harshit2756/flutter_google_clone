@@ -1,11 +1,12 @@
 <div align="center" id="top">
   <img src="https://github.com/Harshit2756/flutter_google_clone/blob/dc4430c53fa33afecd4237d3a70b52a0e79afebf/assets/images/Google_G_logo.png?raw=true" alt="Google Search Clone (Flutter)" width="200" height="200"/>
 
-<a href="https://twitter.com/intent/follow?screen_name=Harshit2756"><img alt= "Twitter" src="https://img.shields.io/twitter/follow/Harshit2756">
-</a>
-<a href="https://www.linkedin.com/in/harshit-khandelwal-3a76631b9/">
-<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white&label=Harshit%20Khandelwal">
-</a>
+  <a href="https://twitter.com/intent/follow?screen_name=Harshit2756">
+    <img alt= "Twitter" src="https://img.shields.io/twitter/follow/Harshit2756">
+  </a>
+  <a href="https://www.linkedin.com/in/harshit-khandelwal-3a76631b9/">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white&label=Harshit20Khandelwal">
+  </a>
 </div>
 
 <h1 align="center">Google Search Clone (Flutter)</h1>
@@ -15,60 +16,66 @@
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Harshit2756/flutter_google_clone">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Harshit2756/flutter_google_clone">
   <img alt="License" src="https://img.shields.io/github/license/Harshit2756/flutter_google_clone">
-  <!-- <img alt="GitHub issues" src="https://img.shields.io/github/issues/Harshit2756/flutter_google_clone"> -->
-  <!-- <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Harshit2756/flutter_google_clone"> -->
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/Harshit2756/flutter_google_clone?color=56BEB8" /> -->
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/Harshit2756/flutter_google_clone?color=56BEB8" /> -->
-</p>
-<!-- ## Status
-<h4 align="center">
- 🚧  StyleHub App  🚧
-</h4> -->
-<hr>
-
-<p align="center">
-  <a href="#dart-about">About</a> &nbsp; | &nbsp;
-  <a href="#mobile_phone-see-it-in-action">See it in Action</a> &nbsp; | &nbsp;
-  <a href="#sparkles-features">Features</a> &nbsp; | &nbsp;
-  <a href="#white_check_mark-installation">Installation</a> &nbsp; | &nbsp;
-  <a href="#rocket-resources">Resources</a> &nbsp; | &nbsp;
-  <a href="https://github.com/Harshit2756" target="_blank">Author</a>
 </p>
 
-## :dart: About
+---
 
-This project is a responsive clone of the Google Search interface. It allows users to perform searches using the Google Search API and displays results with pagination. The app is fully responsive and adjusts seamlessly across devices, from mobile phones to desktops.
+## 📜 Table of Contents
 
-## :mobile_phone: See it in action
+- [📖 About](#book-about)
+- [👀 See it in Action](#eyes-see-it-in-action)
+- [✨ Features](#sparkles-features)
+- [✅ Installation](#white_check_mark-installation)
+- [🚀 Resources](#rocket-resources)
+- [👨‍💻 Author](#author)
 
-| <a href="https://harshit2756.github.io/flutter_google_clone/" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Live_Preview_Trans.png?raw=true" width="90px"></a> | <a href=" " target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Demo_Video_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/releases/download/v1.0.0/app-release.apk" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Download_Apk_Trans.png?raw=true" width="90px"></a> | <a href="https://github.com/Harshit2756/flutter_google_clone/archive/refs/tags/v1.0.0.zip" target="_blank"><img src="https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Source_Code_Trans.png?raw=true" width="90px"></a> |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     Live Preview                                                                     |                                                                     Demo Video                                                                     |                                                                                                                     Download APK                                                                                                                      |                                                                                                                  Source Code                                                                                                                   |
+## :book: About
 
-<!-- ### Screenshots
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop1-01.png)
+The **Google Search Clone** is a responsive Flutter app replicating the Google Search experience. With seamless integration of the Google Search API, users can enjoy smooth search functionality across all devices, from mobile to desktop. Built using Flutter's flexible framework, the app dynamically adjusts its layout to ensure a consistent user experience.
 
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop2-01.png)
+Key Features:
 
-![App Screenshot](https://tejasbadone.web.app/assets/img/portfolio/apps/eshop/eshop3-01.png)  -->
+- 🌐 **Google Search API Integration**
+- 📱 **Mobile-friendly Design**
+- 💻 **Full Desktop Support**
+- 🔄 **Pagination for easy browsing**
+
+## :eyes: See it in Action
+
+| [![Live Preview](https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Live_Preview_Trans.png?raw=true)](https://harshit2756.github.io/flutter_google_clone/) | [![Download APK](https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Download_Apk_Trans.png?raw=true)](https://github.com/Harshit2756/flutter_google_clone/releases/download/v1.0.0/app-release.apk) | [![Source Code](https://github.com/Harshit2756/Harshit2756/blob/main/Assets/Source_Code_Trans.png?raw=true)](https://github.com/Harshit2756/flutter_google_clone/archive/refs/tags/v1.0.0.zip) |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                               [**Live Preview**](https://harshit2756.github.io/flutter_google_clone/)                                               |                                               [**Download APK**](https://github.com/Harshit2756/flutter_google_clone/releases/download/v1.0.0/app-release.apk)                                               |                                              [**Source Code**](https://github.com/Harshit2756/flutter_google_clone/archive/refs/tags/v1.0.0.zip)                                               |
+
+### 📺 Demo Video
+
+<div align="center">
+  <img src="Screenshots/Demo_video.gif" alt="Demo Video" width="600"/>
+</div>
+
+## 📷 Screenshots
+
+| <img src="Screenshots/m_home_page.png?raw=true" width="250" height="400"/> | <img src="Screenshots/m_search.png?raw=true" width="250" height="400"/> | <img src="Screenshots/m_search_page.png?raw=true" width="250" height="400"/> | <img src="Screenshots/m_pagination.png?raw=true" width="250" height="400"/> |
+| :------------------------------------------------------------------------: | :---------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
+|                                 Home Page                                  |                               Search Page                               |                                Search Results                                |                                 Pagination                                  |
+| <img src="Screenshots/t_home_page.png?raw=true" width="400" height="250"/> | <img src="Screenshots/t_search.png?raw=true" width="400" height="250"/> | <img src="Screenshots/t_search_page.png?raw=true" width="400" height="250"/> | <img src="Screenshots/t_pagination.png?raw=true" width="400" height="250"/> |
+|                                Tablet Home                                 |                              Tablet Search                              |                            Tablet Search Results                             |                              Tablet Pagination                              |
 
 ## :sparkles: Features
 
-✔️ **Responsive UI** - Adapts layout based on screen size (phone, tablet, desktop).\
-✔️ **Google Search API Integration** - Uses Google's official API to fetch search results. \
-✔️ **Pagination** - Efficient navigation through search results with pagination. \
-✔️ **Smooth UI** - User-friendly and clean interface replicating the Google Search experience. 
-
+- 📱 **Fully Responsive**: Works on mobile, tablet, and desktop with smooth transitions.
+- 🌐 **Google Search API**: Search and display real-time results using Google’s official API.
+- ➡️ **Pagination**: Efficient result browsing with paginated content.
+- 💡 **Clean UI**: Simple, intuitive design mimicking the official Google interface.
 
 ## :white_check_mark: Installation
 
-To run this project, you need to have Flutter installed on your machine. If you don't have Flutter installed, you can follow the official Flutter installation guide [here](https://flutter.dev/docs/get-started/install).
+To run the app locally, ensure you have Flutter installed. If not, follow the installation guide [here](https://flutter.dev/docs/get-started/install).
 
-- Flutter Version - 3.22.0
+**Flutter Version**: `3.24.0`
 
-Once you have Flutter installed, follow these steps to run the project:
+### Steps to Get Started:
 
-1. Clone the repository:
+1. **Clone the repository**:
 
 ```bash
 git clone https://github.com/Harshit2756/flutter_google_clone.git
