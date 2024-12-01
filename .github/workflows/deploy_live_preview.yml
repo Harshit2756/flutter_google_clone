@@ -6,7 +6,7 @@ name: Flutter Web Preview Build
 
 on:
   push:
-    branches: [maaster] #. Specify the main/master branch name
+    branches: [master] #. Specify the main/master branch name
 permissions:
   contents: write
 
@@ -14,8 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      apiKey: ${{ secrets.API_KEY }} # Add environment variables for API keys
-      contextKey: ${{ secrets.CONTEXT_KEY }}
+      API_KEY: ${{ secrets.API_KEY }}
+      CONTEXT_KEY: ${{ secrets.CONTEXT_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -50,8 +50,8 @@ jobs:
         run: |
           mkdir -p lib/config
           cat > lib/config/api_keys.env << EOL
-          apiKey = ${{ secrets.API_KEY }}
-          contextKey = ${{ secrets.CONTEXT_KEY }}
+          API_KEY=${{ secrets.API_KEY }}
+          CONTEXT_KEY=${{ secrets.CONTEXT_KEY }}
           EOL
 
       - name: Update main.dart for preview
@@ -61,11 +61,13 @@ jobs:
           import 'package:device_preview_screenshot/device_preview_screenshot.dart';
           import 'package:flutter/material.dart';
           import 'package:google_clone/colors.dart';
+          import 'package:flutter_dotenv/flutter_dotenv.dart';
           import 'package:google_clone/responsive/mobile_screen_layout.dart';
           import 'package:google_clone/responsive/responsive_layout_screen.dart';
           import 'package:google_clone/responsive/web_screen_layout.dart';
 
-          void main() {
+          void main() async {
+            await dotenv.load(fileName: "config/api_keys.env");
             runApp(
               DevicePreview(
                 // backgroundColor: ,
