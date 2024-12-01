@@ -1,0 +1,141 @@
+name: Flutter Web Preview Build
+# . Before you push to main, you need to create a new branch named live_preview
+# . Then go to Sttings> Pages and select the live_preview branch as the source and the /(docs) directory.
+# . Then, you need to create a new workflow file named deploy_live_preview.yml in the .github/workflows directory.
+# . Add the following code to the deploy_live_preview.yml file:
+
+on:
+  push:
+    branches: [maaster] #. Specify the main/master branch name
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Reset live_preview branch to master'
+        run: |
+          # Create or checkout live_preview branch
+          git checkout live_preview 2>/dev/null || git checkout -b live_preview
+          # Force reset to master' branch state
+          git fetch origin master'
+          git reset --hard origin/master'
+          # Force push to update live_preview branch
+          git push -f origin live_preview
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.24.4" #. Specify the Flutter version
+          channel: "stable"
+
+      - name: Install dependencies
+        run: |
+          flutter pub get
+          flutter pub add device_preview
+          flutter pub add device_preview_screenshot
+          flutter pub get
+
+      - name: Update main.dart for preview
+        run: |
+          # Ensure we're creating a fresh main.dart
+          cat > lib/main.dart << 'EOL' #. Replace with your main.dart content
+          import 'package:device_preview_screenshot/device_preview_screenshot.dart';
+          import 'package:flutter/material.dart';
+          import 'package:google_clone/colors.dart';
+          import 'package:google_clone/responsive/mobile_screen_layout.dart';
+          import 'package:google_clone/responsive/responsive_layout_screen.dart';
+          import 'package:google_clone/responsive/web_screen_layout.dart';
+
+          void main() {
+            runApp(
+              DevicePreview(
+                // backgroundColor: ,
+                tools: const [
+                  DeviceSection(
+                    frameVisibility: false,
+                    orientation: false,
+                  ),
+                  // SystemSection(
+                  //   locale: false,
+                  //   theme: true,
+                  // ),
+                  // AccessibilitySection(
+                  //   accessibleNavigation: false,
+                  //   boldText: false,
+                  //   invertColors: false,
+                  //   textScalingFactor: false,
+                  // ),
+                  DevicePreviewScreenshot(),
+
+                  SettingsSection(),
+                ],
+
+                defaultDevice: Devices.ios.iPhone13ProMax,
+                enabled: true,
+                builder: (context) => const MyApp(),
+              ),
+            );
+          }
+
+          class MyApp extends StatelessWidget {
+            const MyApp({super.key});
+
+            // This widget is the root of your application.
+            @override
+            Widget build(BuildContext context) {
+              return MaterialApp(
+                locale: DevicePreview.locale(context),
+                builder: DevicePreview.appBuilder,
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData.dark().copyWith(
+                  scaffoldBackgroundColor: backgroundColor,
+                  tooltipTheme: TooltipThemeData(
+                    waitDuration: const Duration(seconds: 1),
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xff424548),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+                title: 'Google Clone',
+                home: const ResposiveLayoutScreen(
+                  mobileScreenLayout: MobileScreenLayout(),
+                  webScreenLayout: WebScreenLayout(),
+                ),
+              );
+            }
+          }
+          EOL
+
+      - name: Build Web
+        run: flutter build web --base-href "/flutter_google_clone/" #. Specify the base href
+
+      - name: Update docs directory
+        run: |
+          # Remove old docs and create new one
+          rm -rf docs
+          mkdir -p docs
+          # Copy web build to docs
+          cp -r build/web/. docs/
+
+      - name: Commit and push preview changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Stage all changes
+          git add docs lib/main.dart
+          git commit -m "Update web preview build" || echo "No changes to commit"
+          # Force push to ensure clean state
+          git push -f origin live_preview
