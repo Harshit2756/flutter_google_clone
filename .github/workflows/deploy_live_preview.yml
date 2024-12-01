@@ -131,7 +131,9 @@ jobs:
           EOL
 
       - name: Build Web
-        run: flutter build web --base-href "/flutter_google_clone/" #. Specify the base href
+        run: |
+          flutter build web --base-href "/flutter_google_clone/" #. Specify the base href
+          cat build/web/index.html | grep "base href"
 
       - name: Update docs directory
         run: |
