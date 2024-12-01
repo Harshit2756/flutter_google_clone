@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_clone/colors.dart';
 import 'package:google_clone/responsive/mobile_screen_layout.dart';
 import 'package:google_clone/responsive/responsive_layout_screen.dart';
 import 'package:google_clone/responsive/web_screen_layout.dart';
 
-void main() {
+void main() async{
+  await dotenv.load(fileName: "config/api_keys.env");
   runApp(const MyApp());
 }
 

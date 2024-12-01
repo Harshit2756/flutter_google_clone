@@ -13,19 +13,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      apiKey: ${{ secrets.API_KEY }} # Add environment variables for API keys
+      contextKey: ${{ secrets.CONTEXT_KEY }}
+
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Reset live_preview branch to master'
+      - name: Reset live_preview branch to master
         run: |
           # Create or checkout live_preview branch
           git checkout live_preview 2>/dev/null || git checkout -b live_preview
-          # Force reset to master' branch state
-          git fetch origin master'
-          git reset --hard origin/master'
+          # Force reset to master branch state
+          git fetch origin master
+          git reset --hard origin/master
           # Force push to update live_preview branch
           git push -f origin live_preview
 
@@ -41,6 +45,14 @@ jobs:
           flutter pub add device_preview
           flutter pub add device_preview_screenshot
           flutter pub get
+
+      - name: Create .env file
+        run: |
+          mkdir -p lib/config
+          cat > lib/config/api_keys.env << EOL
+          apiKey = ${{ secrets.API_KEY }}
+          contextKey = ${{ secrets.CONTEXT_KEY }}
+          EOL
 
       - name: Update main.dart for preview
         run: |
@@ -73,10 +85,8 @@ jobs:
                   //   textScalingFactor: false,
                   // ),
                   DevicePreviewScreenshot(),
-
                   SettingsSection(),
                 ],
-
                 defaultDevice: Devices.ios.iPhone13ProMax,
                 enabled: true,
                 builder: (context) => const MyApp(),
@@ -87,7 +97,6 @@ jobs:
           class MyApp extends StatelessWidget {
             const MyApp({super.key});
 
-            // This widget is the root of your application.
             @override
             Widget build(BuildContext context) {
               return MaterialApp(

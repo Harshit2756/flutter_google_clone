@@ -16,10 +16,9 @@ jobs:
   build:
     name: Build & Release
     runs-on: macos-latest
-    # Add environment variables from GitHub Secrets
     env:
-      apiKey: ${{ secrets.API_KEY }}
-      contextKey: ${{ secrets.CONTEXT_KEY }}
+      API_KEY: ${{ secrets.API_KEY }}
+      CONTEXT_KEY: ${{ secrets.CONTEXT_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -39,15 +38,13 @@ jobs:
           server-password: ${{ secrets.GITHUB_TOKEN }}
           overwrite-settings: true
           job-status: success
-          distribution: "temurin" # Added distribution input
+          distribution: "temurin"
 
-      - name: Create .env file
+      - name: Create env file
         run: |
           mkdir -p config
-          cat > config/api_keys.env << EOL
-          apiKey = ${{ secrets.API_KEY }}
-          contextKey = ${{ secrets.CONTEXT_KEY }}
-          EOL
+          echo "API_KEY=$API_KEY" > config/api_keys.env
+          echo "CONTEXT_KEY=$CONTEXT_KEY" >> config/api_keys.env
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2

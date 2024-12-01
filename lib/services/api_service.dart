@@ -1,10 +1,13 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_clone/config/api_json.dart';
-import 'package:google_clone/config/api_keys.env';
 import 'package:http/http.dart' as http;
 
 class ApiService {
+  static final String apiKey = dotenv.env['API_KEY'] ?? '';
+  static final String contextKey = dotenv.env['CONTEXT_KEY'] ?? '';
   bool isDummyData = false;
 
   Future<Map<String, dynamic>> fetchData({
