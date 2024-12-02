@@ -48,7 +48,7 @@ jobs:
 
       - name: Create .env file
         run: |
-          mkdir -p lib/config
+          # mkdir -p lib/config
           cat > lib/config/api_keys.env << EOL
           API_KEY=${{ secrets.API_KEY }}
           CONTEXT_KEY=${{ secrets.CONTEXT_KEY }}
@@ -58,6 +58,7 @@ jobs:
         run: |
           # Ensure we're creating a fresh main.dart
           cat > lib/main.dart << 'EOL' #. Replace with your main.dart content
+          import 'dart:io';
           import 'package:device_preview_screenshot/device_preview_screenshot.dart';
           import 'package:flutter/material.dart';
           import 'package:google_clone/colors.dart';
@@ -67,7 +68,19 @@ jobs:
           import 'package:google_clone/responsive/web_screen_layout.dart';
 
           void main() async {
-            await dotenv.load(fileName: "config/api_keys.env");
+            try {
+              // Try multiple paths
+              await dotenv.load(fileName: "lib/config/api_keys.env");
+            } catch (e) {
+              try {
+                await dotenv.load(fileName: "assets/config/api_keys.env");
+              } catch (e) {
+                print("Failed to load .env file, using environment variables");
+                // Fallback to environment variables
+                dotenv.env['API_KEY'] = Platform.environment['API_KEY'] ?? '';
+                dotenv.env['CONTEXT_KEY'] = Platform.environment['CONTEXT_KEY'] ?? '';
+              }
+            }
             runApp(
               DevicePreview(
                 // backgroundColor: ,
