@@ -6,7 +6,7 @@ import 'package:google_clone/responsive/responsive_layout_screen.dart';
 import 'package:google_clone/responsive/web_screen_layout.dart';
 
 void main() async{
-  await dotenv.load(fileName: "config/api_keys.env");
+  await dotenv.load(fileName: "lib/config/api_keys.env");
   runApp(const MyApp());
 }
 

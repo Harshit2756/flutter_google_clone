@@ -132,7 +132,7 @@ jobs:
 
       - name: Build Web
         run: |
-          flutter build web 
+          flutter build web
           # cat build/web/index.html | grep "base href"
 
       - name: Update docs directory
