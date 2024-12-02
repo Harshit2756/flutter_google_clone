@@ -1,43 +1,83 @@
+import 'dart:io';
+import 'package:device_preview_screenshot/device_preview_screenshot.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_clone/colors.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_clone/responsive/mobile_screen_layout.dart';
 import 'package:google_clone/responsive/responsive_layout_screen.dart';
 import 'package:google_clone/responsive/web_screen_layout.dart';
 
-void main() async{
-  await dotenv.load(fileName: "lib/config/api_keys.env");
-  runApp(const MyApp());
+void main() async {
+  try {
+    // Try multiple paths
+    await dotenv.load(fileName: "lib/config/api_keys.env");
+  } catch (e) {
+    try {
+      await dotenv.load(fileName: "assets/config/api_keys.env");
+    } catch (e) {
+      print("Failed to load .env file, using environment variables");
+      // Fallback to environment variables
+      dotenv.env['API_KEY'] = Platform.environment['API_KEY'] ?? '';
+      dotenv.env['CONTEXT_KEY'] = Platform.environment['CONTEXT_KEY'] ?? '';
+    }
+  }
+  runApp(
+    DevicePreview(
+      // backgroundColor: ,
+      tools: const [
+        DeviceSection(
+          frameVisibility: false,
+          orientation: false,
+        ),
+        // SystemSection(
+        //   locale: false,
+        //   theme: true,
+        // ),
+        // AccessibilitySection(
+        //   accessibleNavigation: false,
+        //   boldText: false,
+        //   invertColors: false,
+        //   textScalingFactor: false,
+        // ),
+        DevicePreviewScreenshot(),
+        SettingsSection(),
+      ],
+      defaultDevice: Devices.ios.iPhone13ProMax,
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: backgroundColor,
-          tooltipTheme: TooltipThemeData(
-            waitDuration: const Duration(seconds: 1),
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-            ),
-            decoration: BoxDecoration(
-              color: const Color(0xff424548),
-              borderRadius: BorderRadius.circular(4),
-            ),
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
+        tooltipTheme: TooltipThemeData(
+          waitDuration: const Duration(seconds: 1),
+          textStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+          decoration: BoxDecoration(
+            color: const Color(0xff424548),
+            borderRadius: BorderRadius.circular(4),
           ),
         ),
-        title: 'Google Clone',
-        home: const ResposiveLayoutScreen(
-          mobileScreenLayout: MobileScreenLayout(),
-          webScreenLayout: WebScreenLayout(),
-        ),
-        );
+      ),
+      title: 'Google Clone',
+      home: const ResposiveLayoutScreen(
+        mobileScreenLayout: MobileScreenLayout(),
+        webScreenLayout: WebScreenLayout(),
+      ),
+    );
   }
 }
